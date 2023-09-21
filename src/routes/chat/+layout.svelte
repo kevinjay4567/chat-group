@@ -4,7 +4,7 @@
 
 <div class="app">
   <Navbar />
-  <main>
+  <main class="main-container">
     <slot></slot>
   </main>
 </div>
@@ -16,6 +16,10 @@
     max-height: 100vh;
     display: flex;
     background-color: var(--secondary-color);
+  }
+
+  .main-container {
+    flex-basis: 80%;
   }
 
 </style>

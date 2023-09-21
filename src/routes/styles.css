@@ -8,6 +8,8 @@
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
 
+ @import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+
  :root {
 	--primary-color: rgba(18, 15, 19, 1);
 	--secondary-color: rgba(37, 35, 41, 1);
@@ -15,6 +17,7 @@
 
  * {
 	color: white;
+	font-family: 'Noto Sans';
  }
 
 html {
