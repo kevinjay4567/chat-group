@@ -10,6 +10,10 @@
 
   </section>
 
+  <div class="chat-input">
+    <input type="text">
+  </div>
+
 
 </div>
 
@@ -32,7 +36,29 @@
   }
 
   .chat-content {
-    padding-top: 95.65px;
+    padding-left: 70.62px;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    height: 80vh;
   }
+
+  .chat-content > ul {
+    padding-bottom: 40.3px;
+    list-style: none;
+  }
+
+  .chat-input {
+    padding-left: 70.62px;
+  }
+
+  .chat-input > input {
+    width: 90%;
+    height: 52px;
+    background-color: var(--third-color);
+    border: none;
+    border-radius: 8px;
+  }
+
 
 </style>
