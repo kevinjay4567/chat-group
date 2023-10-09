@@ -10,8 +10,13 @@
 
   </section>
 
-  <div class="chat-input">
-    <input type="text">
+  <div class="chat-input-container">
+    <div class="chat-input">
+      <input type="text" placeholder="Type message here"/>
+      <button class="chat-send-btn">
+        >
+      </button>
+    </div>
   </div>
 
 
@@ -20,23 +25,23 @@
 <style>
 
   .chat-container {
-    padding-top: 0px;
+    padding-top: 0;
   }
 
   .chat-title {
-    padding-left: 70.62px;
-    box-shadow: 0px 3px 5px black;
-    height: 59.49px;
+    padding-left: 71px;
+    box-shadow: 0 3px 5px black;
+    height: 59px;
     display: flex;
     align-items: center;
   }
 
   .chat-title > h3 {
-    margin: 0px;
+    margin: 0;
   }
 
   .chat-content {
-    padding-left: 70.62px;
+    padding-left: 71px;
     display: flex;
     flex-direction: column;
     justify-content: end;
@@ -44,18 +49,37 @@
   }
 
   .chat-content > ul {
-    padding-bottom: 40.3px;
+    padding-bottom: 40px;
     list-style: none;
   }
 
-  .chat-input {
-    padding-left: 70.62px;
+  .chat-input-container {
+    padding-left: 71px;
   }
 
-  .chat-input > input {
+  .chat-input {
     width: 90%;
     height: 52px;
     background-color: var(--third-color);
+    border: none;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    & input {
+      height: 100%;
+      width: 90%;
+      background-color: transparent;
+      border: none;
+      padding-left: 17px;
+    }
+  }
+
+  .chat-send-btn{
+    height: 40px;
+    width: 40px;
+    background-color: rgba(47, 128, 237, 1);
     border: none;
     border-radius: 8px;
   }
