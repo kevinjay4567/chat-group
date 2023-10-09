@@ -19,10 +19,10 @@
     <div class="navbar-input">
       <input type="text" placeholder="search" />
     </div>
-  
+
     <ul class="navbar-list">
       {#each channels as channel}
-        <li>{channel.name}</li>
+        <li><a href="/chat/{channel.id}">{channel.name}</a></li>
       {/each}
     </ul>
   </div>
