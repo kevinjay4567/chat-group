@@ -1,31 +1,45 @@
 <script>
 	import { onMount } from 'svelte';
 
+	export let url;
+	export let id;
+
 	$: channels = [];
+	$: users = [];
 
 	onMount(() => {
 		fetch('http://localhost:8000/api/channels')
 			.then((response) => response.json())
 			.then((data) => (channels = data));
+
+		fetch(`http://localhost:8000/api/channel/${id}`)
+			.then((response) => response.json())
+			.then((data) => (users = data.data.users));
 	});
 </script>
 
 <nav class="navbar-container">
-  <div>
-    <div class="navbar-header">
-      <h3>Channels</h3>
-      <button>+</button>
-    </div>
-    <div class="navbar-input">
-      <input type="text" placeholder="search" />
-    </div>
+	<div>
+		<div class="navbar-header">
+			<h3>Channels</h3>
+			<button>+</button>
+		</div>
+		<div class="navbar-input">
+			<input type="text" placeholder="search" />
+		</div>
 
-    <ul class="navbar-list">
-      {#each channels as channel}
-        <li><a href="/chat/{channel.id}">{channel.name}</a></li>
-      {/each}
-    </ul>
-  </div>
+		<ul class="navbar-list">
+			{#if url === '/chat'}
+				{#each channels as channel}
+					<li><a href="/chat/{channel.id}">{channel.name}</a></li>
+				{/each}
+			{:else}
+				{#each users as user}
+					<li>{user.name}</li>
+				{/each}
+			{/if}
+		</ul>
+	</div>
 
 	<div class="navbar-footer">
 		<h3>User Name</h3>
@@ -35,9 +49,9 @@
 <style>
 	.navbar-container {
 		flex-basis: 20%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
 		background-color: var(--primary-color);
 	}
 
@@ -45,7 +59,7 @@
 		display: flex;
 		padding-left: 32.99px;
 		padding-right: 21.6px;
-    height: 59.49px;
+		height: 59.49px;
 		box-shadow: -3px 3px 3px black;
 		justify-content: space-between;
 		align-items: center;
@@ -80,7 +94,7 @@
 	}
 
 	.navbar-footer {
-    padding-left: 32.99px;
+		padding-left: 32.99px;
 		background-color: black;
 	}
 </style>

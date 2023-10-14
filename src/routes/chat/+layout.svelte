@@ -1,11 +1,11 @@
 <script>
-  import Navbar from "./Navbar.svelte";
+  export let data;
 </script>
 
 <div class="app">
-  <Navbar />
+  <slot name="navbar" class="navbar-container" />
   <main class="main-container">
-    <slot></slot>
+    <slot />
   </main>
 </div>
 
@@ -16,10 +16,10 @@
     max-height: 100vh;
     display: flex;
     background-color: var(--secondary-color);
-  }
 
-  .main-container {
-    flex-basis: 80%;
+     & .navbar-container {
+         height: 100%;
+      }
   }
 
 </style>

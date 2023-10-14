@@ -1,5 +1,5 @@
-export function load({params}) {
-    return {
-        content: params.slug,
-    };
+export function load({ params }) {
+	return {
+		content: params.slug,
+	};
 }

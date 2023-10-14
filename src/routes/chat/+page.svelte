@@ -1,3 +1,12 @@
+<script>
+  import Layout from "./+layout.svelte";
+  import Navbar from "./Navbar.svelte";
+</script>
+
+<Layout>
+  <div slot="navbar">
+  <Navbar />
+</div>
 <div class="chat-container">
   <header class="chat-title">
     <h3>Actual Channel</h3>
@@ -21,6 +30,7 @@
 
 
 </div>
+</Layout>
 
 <style>
 
